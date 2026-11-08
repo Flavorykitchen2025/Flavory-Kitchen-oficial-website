@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Flavory Kitchen logo</title>
+  <desc id="logoDesc">Elegant circular logo with the initials FK in gold on a dark background.</desc>
+  <defs>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5df9c"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b78b2d"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="88" fill="#111111"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="url(#goldGlow)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="74" fill="none" stroke="rgba(212,175,55,0.55)" stroke-width="1.5" stroke-dasharray="3 10"/>
+
+  <text x="100" y="116" text-anchor="middle" font-size="72" font-weight="700" font-family="Georgia, 'Times New Roman', serif" fill="url(#goldGlow)" letter-spacing="2">FK</text>
+
+  <path d="M48 142 C70 118, 130 118, 152 142" fill="none" stroke="url(#goldGlow)" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="100" cy="55" r="6" fill="#f5df9c" opacity="0.95"/>
+</svg>
