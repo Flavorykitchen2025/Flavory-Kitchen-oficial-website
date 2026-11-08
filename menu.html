@@ -3,47 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover the Flavory Kitchen menu, prepared with care and inspired by fresh ingredients.">
+  <meta name="description" content="Explore the Flavory Kitchen menu, including breakfast, appetizers, burgers, pasta, pizza, sushi, and catering.">
   <title>Our Menu | Flavory Kitchen &amp; Events</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#211d18; --gold:#c4a66a; --cream:#f7f4ee; --muted:#777168; }
+    :root { --gold:#b9975b; --ink:#222; --cream:#f7f3ec; --muted:#666; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:24px; }
-    body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; }
-    .hero { min-height:390px; padding:24px 7% 76px; color:#fff; text-align:center; background:linear-gradient(180deg,rgba(13,12,10,.62),rgba(13,12,10,.82)),url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1800&auto=format&fit=crop') center 52%/cover; }
-    .topbar { width:min(1200px,100%); margin:0 auto 65px; display:flex; justify-content:space-between; align-items:center; }
-    .brand { color:#fff; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.1rem; }
-    .back { border:1px solid rgba(255,255,255,.55); border-radius:30px; padding:10px 17px; color:#fff; text-decoration:none; font-size:.88rem; transition:.2s; }
-    .back:hover { border-color:var(--gold); color:var(--gold); }
-    .eyebrow { color:#dfc58e; letter-spacing:3px; font-size:.75rem; font-weight:700; }
-    h1,h2 { font-family:'Playfair Display',serif; }
-    h1 { margin:12px 0; font-size:clamp(3rem,8vw,5.6rem); font-weight:500; }
-    .hero p { max-width:620px; margin:0 auto; color:#eee9df; line-height:1.8; }
-    main { width:min(1120px,88%); margin:auto; padding:52px 0 90px; }
-    .intro { margin:0 auto 25px; text-align:center; }
-    .intro .eyebrow { color:#9c7d43; }
-    .intro h2 { margin:9px 0 10px; font-size:clamp(1.8rem,4vw,2.7rem); font-weight:500; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:'Poppins',sans-serif; }
+    .hero { min-height:390px; padding:24px 7% 70px; color:#fff; text-align:center; background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.76)),url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1800&auto=format&fit=crop') center/cover; }
+    .topbar { width:min(1200px,100%); margin:0 auto 62px; display:flex; justify-content:space-between; align-items:center; }
+    .brand { color:#fff; text-decoration:none; font-weight:600; }
+    .back { border:1px solid rgba(255,255,255,.55); border-radius:30px; padding:10px 17px; color:#fff; text-decoration:none; font-size:.9rem; transition:.2s; }
+    .back:hover { border-color:#e2c486; color:#e2c486; }
+    .eyebrow { color:#e2c486; letter-spacing:2px; font-size:.8rem; font-weight:600; }
+    h1,h2,h3 { font-family:'Poppins',sans-serif; }
+    h1 { margin:10px 0 12px; font-size:clamp(2.8rem,7vw,4.6rem); line-height:1.15; }
+    .hero p { max-width:680px; margin:0 auto; color:#eee; line-height:1.8; }
+    main { width:min(1200px,90%); margin:auto; padding:64px 0 90px; }
+    .intro { margin:0 auto 35px; text-align:center; }
+    .intro .eyebrow { color:#9c7940; }
+    .intro h2 { margin:9px 0 10px; font-size:clamp(1.9rem,4vw,2.7rem); }
     .intro p { color:var(--muted); line-height:1.7; }
-    .category-nav { position:sticky; top:12px; z-index:5; display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin:28px 0 44px; padding:13px; border:1px solid #e8e1d5; border-radius:16px; background:rgba(255,255,255,.94); box-shadow:0 10px 30px rgba(37,30,18,.08); backdrop-filter:blur(10px); }
-    .category-nav a { padding:9px 14px; border:1px solid transparent; border-radius:24px; color:#4b453a; text-decoration:none; font-size:.85rem; transition:.2s; }
+    .category-nav { position:sticky; top:10px; z-index:5; display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin:0 0 42px; padding:13px; border:1px solid #e8dfd1; border-radius:16px; background:rgba(255,255,255,.96); box-shadow:0 8px 24px rgba(0,0,0,.06); }
+    .category-nav a { padding:8px 13px; border-radius:24px; color:#342f27; text-decoration:none; font-size:.84rem; transition:.2s; }
     .category-nav a:hover,.category-nav a:focus-visible { color:#fff; background:#28231c; outline:none; }
-    .menu-sections { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; align-items:start; }
-    .menu-category { scroll-margin-top:125px; padding:26px 28px 18px; border:1px solid #ebe5da; border-radius:15px; background:linear-gradient(135deg,#fff 0%,#fcfaf6 100%); box-shadow:0 9px 26px rgba(40,32,20,.05); }
-    .menu-category h2 { margin:0 0 5px; font-size:1.6rem; font-weight:600; }
-    .rule { width:42px; height:2px; margin:12px 0 15px; background:var(--gold); }
-    .menu-subheading { margin:20px 0 4px; font-family:'Playfair Display',serif; font-size:1.2rem; }
-    .menu-item { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px dotted #d8d0c3; }
-    .menu-item:last-child { border-bottom:0; }
-    .item-name { font-weight:600; }
-    .item-description { display:block; margin-top:4px; color:var(--muted); font-size:.86rem; line-height:1.5; }
-    .item-price { flex:0 0 auto; color:#8b6c35; font-weight:700; white-space:nowrap; }
-    .category-note { margin:14px 0 0; padding:12px 14px; border-radius:9px; color:#645c4e; background:#f1ece2; font-size:.86rem; line-height:1.6; }
-    .note { margin:34px 0 0; padding:20px; border:1px solid #e5dbc7; border-radius:12px; color:#645c4e; text-align:center; line-height:1.7; background:#f1ece2; font-size:.9rem; }
-    footer { padding:24px 16px; color:#ddd6c9; background:#171512; text-align:center; font-size:.86rem; }
-    @media(max-width:700px) { .hero { min-height:340px; padding-bottom:58px; } .topbar { margin-bottom:55px; } .menu-sections { grid-template-columns:1fr; } .category-nav { position:static; } main { padding-top:40px; } }
+    .menu-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; align-items:start; }
+    .menu-card { scroll-margin-top:118px; padding:27px 29px 22px; border:1px solid #eee6d9; border-radius:20px; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.065); transition:transform .25s,box-shadow .25s; }
+    .menu-card:hover { transform:translateY(-3px); box-shadow:0 15px 34px rgba(0,0,0,.09); }
+    .menu-card h2 { margin:0 0 6px; font-size:1.45rem; }
+    .rule { width:42px; height:3px; margin:12px 0 15px; border-radius:3px; background:var(--gold); }
+    .menu-note,.menu-footer-line { margin:0 0 12px; color:#6b6255; font-size:.86rem; line-height:1.65; }
+    .menu-list { list-style:none; margin:0; padding:0; }
+    .menu-list li { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; padding:11px 0; border-bottom:1px solid #eee9e1; }
+    .menu-list li:last-child { border-bottom:0; }
+    .menu-list strong { display:block; font-size:.94rem; font-weight:600; }
+    .menu-subtext { display:block; margin-top:3px; color:#777; font-size:.81rem; line-height:1.55; }
+    .price { flex:0 0 auto; color:#94713b; font-weight:700; font-size:.9rem; white-space:nowrap; }
+    .menu-footer-line { margin:14px 0 0; padding:11px 13px; border-radius:10px; background:#f7f3ec; }
+    .note { margin:34px 0 0; padding:20px; border:1px solid #e5dbc7; border-radius:14px; color:#645c4e; text-align:center; line-height:1.7; background:#f1ece2; font-size:.9rem; }
+    footer { padding:25px 16px; color:#eee; background:#111; text-align:center; font-size:.88rem; }
+    @media(max-width:720px) { .hero { min-height:340px; padding-bottom:55px; } .topbar { margin-bottom:52px; } main { width:min(100% - 30px,600px); padding-top:42px; } .menu-grid { grid-template-columns:1fr; gap:16px; } .menu-card { padding:23px 21px 18px; } .category-nav { position:static; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
   </style>
 </head>
@@ -53,148 +55,116 @@
       <a class="brand" href="index.html">Flavory Kitchen &amp; Events</a>
       <a class="back" href="index.html">← Back to homepage</a>
     </div>
-    <div class="eyebrow">FRESH INGREDIENTS · MADE WITH CARE</div>
+    <div class="eyebrow">FRESHLY PREPARED WITH CARE</div>
     <h1>Our Menu</h1>
-    <p>A taste for every occasion. Explore our kitchen categories and discover what we’re preparing.</p>
+    <p>Fresh ingredients, bold flavor, and a refined restaurant experience. Explore our menu and find something for every occasion.</p>
   </header>
   <main>
     <div class="intro">
-      <div class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</div>
-      <h2>Explore the Menu</h2>
-      <p>Choose a category to jump straight to it.</p>
+      <div class="eyebrow">FLAVORY KITCHEN MENU</div>
+      <h2>Premium Dining Collection</h2>
+      <p>Choose a category to jump straight to it. Menu prices are shown in USD.</p>
     </div>
     <nav class="category-nav" aria-label="Menu categories">
-      <a href="#breakfast">Breakfast</a><a href="#appetizers">Appetizers</a><a href="#salads">Salads</a><a href="#burgers">Burgers</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#grilled">Grilled</a><a href="#fried">Fried</a><a href="#healthy-meals">Healthy meals</a><a href="#healthy-burgers">Healthy Burgers</a><a href="#catering">Catering</a>
+      <a href="#breakfast">Breakfast</a><a href="#appetizers">Appetizers</a><a href="#salads">Salads</a><a href="#burgers">Burgers</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#grilled">Grilled</a><a href="#fried">Fried</a><a href="#healthy-meals">Healthy Meals</a><a href="#healthy-burgers">Healthy Burgers</a><a href="#catering">Catering</a><a href="#sushi">Sushi</a>
     </nav>
-    <div class="menu-sections">
-      <section class="menu-category" id="breakfast">
+    <div class="menu-grid">
+      <section class="menu-card" id="breakfast">
         <h2>Breakfast</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Labneh</span><span class="item-price">$2.50</span></div>
-        <div class="menu-item"><span class="item-name">Feta cheese</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Turkey and cheese</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Labneh w makdous</span><span class="item-price">$3.00</span></div>
-        <div class="menu-item"><span class="item-name">Double cream</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Halloumi and Pesto</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Kashkawan</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Kashkawan and mortadella</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Tuna Sandwich</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Breakfast Combo</span><span class="item-description">Sandwich of your choice, fresh orange juice, and something sweet.</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Mini Quattro</span><span class="item-description">4 mini sandwiches of your choice, fresh orange juice, and something sweet.</span></span><span class="item-price">$10.00</span></div>
-        <h3 class="menu-subheading">Omelettes</h3>
-        <div class="menu-item"><span class="item-name">Plain omelette</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Cheese omelette</span><span class="item-price">$5.00</span></div>
-        <div class="menu-item"><span class="item-name">Cheese and Turkey omelette</span><span class="item-price">$6.50</span></div>
-        <div class="menu-item"><span class="item-name">Veggies Omelette</span><span class="item-price">$5.00</span></div>
-        <p class="category-note">Choose your bread: regular baguette, whole wheat bread, saj, or kaake.</p>
+        <p class="menu-note">Served Monday to Saturday, 8:00–12:00.</p>
+        <ul class="menu-list">
+          <li><div><strong>Breakfast Combo</strong><span class="menu-subtext">Sandwich of your choice, fresh orange juice, and something sweet</span></div><span class="price">$10</span></li>
+          <li><div><strong>Mini Quattro</strong><span class="menu-subtext">4 mini sandwiches of your choice, fresh orange juice, and something sweet</span></div><span class="price">$10</span></li>
+          <li><div><strong>Labneh</strong></div><span class="price">$2.50</span></li>
+          <li><div><strong>Feta cheese</strong></div><span class="price">$3.50</span></li>
+          <li><div><strong>Halloumi</strong></div><span class="price">$3.50</span></li>
+          <li><div><strong>Turkey and cheese</strong></div><span class="price">$4</span></li>
+          <li><div><strong>Labneh w makdous</strong></div><span class="price">$3</span></li>
+          <li><div><strong>Double cream</strong></div><span class="price">$3.50</span></li>
+          <li><div><strong>Halloumi and Pesto</strong></div><span class="price">$4</span></li>
+          <li><div><strong>Kashkawan</strong></div><span class="price">$3.50</span></li>
+          <li><div><strong>Kashkawan and mortadella</strong></div><span class="price">$4</span></li>
+          <li><div><strong>Tuna Sandwich</strong></div><span class="price">$4</span></li>
+          <li><div><strong>Plain omelette</strong></div><span class="price">$3.50</span></li>
+          <li><div><strong>Cheese omelette</strong></div><span class="price">$5</span></li>
+          <li><div><strong>Cheese and Turkey omelette</strong></div><span class="price">$6.50</span></li>
+          <li><div><strong>Veggies Omelette</strong></div><span class="price">$5</span></li>
+          <li><div><strong>Full Wheat Mankoushe</strong><span class="menu-subtext">Full wheat flour, quinoa mix, sesame and black sesame, salt, and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Zaatar</strong></div><span class="price">$1</span></li>
+          <li><div><strong>Jebne</strong></div><span class="price">$2.25</span></li>
+          <li><div><strong>Cocktail</strong></div><span class="price">$2</span></li>
+          <li><div><strong>Keshek</strong></div><span class="price">$2</span></li>
+          <li><div><strong>Keshek w Jebne</strong></div><span class="price">$2.25</span></li>
+        </ul>
+        <p class="menu-footer-line">Choose your bread: regular baguette, full wheat bread, saj, or kaake.</p>
       </section>
-      <section class="menu-category" id="appetizers">
+      <section class="menu-card" id="appetizers">
         <h2>Appetizers</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Fries</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Wedges</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Curly Fries</span><span class="item-price">$5.00</span></div>
-        <div class="menu-item"><span class="item-name">Mozzarella sticks<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span class="item-name">Jalapeños triangles<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span class="item-name">Cheese balls<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span class="item-name">Onion Rings</span><span class="item-price">$5.00</span></div>
-        <div class="menu-item"><span class="item-name">Snack combo<span class="item-description">2 mozzarella sticks, 2 cheese balls, 2 jalapeños triangles, 4 onion rings, fries and wedges.</span></span><span class="item-price">$12.00</span></div>
+        <ul class="menu-list">
+          <li><div><strong>Fries</strong></div><span class="price">$4</span></li><li><div><strong>Wedges</strong></div><span class="price">$4</span></li><li><div><strong>Curly Fries</strong></div><span class="price">$5</span></li>
+          <li><div><strong>Mozzarella sticks</strong><span class="menu-subtext">5 pieces</span></div><span class="price">$6</span></li><li><div><strong>Jalapeños triangles</strong><span class="menu-subtext">5 pieces</span></div><span class="price">$6</span></li><li><div><strong>Cheese balls</strong><span class="menu-subtext">5 pieces</span></div><span class="price">$6</span></li><li><div><strong>Onion Rings</strong></div><span class="price">$5</span></li>
+          <li><div><strong>Snack combo</strong><span class="menu-subtext">2 mozzarella sticks, 2 cheese balls, 2 jalapeños triangles, 4 onion rings, fries and wedges</span></div><span class="price">Ask us</span></li>
+        </ul>
       </section>
-      <section class="menu-category" id="salads">
+      <section class="menu-card" id="salads">
         <h2>Salads</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Caesar Salad</span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Caesar Salad</span><span class="item-price">$9.00</span></div>
-        <div class="menu-item"><span class="item-name">Feta Cheese</span><span class="item-price">$8.00</span></div>
-        <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">$8.00</span></div>
-        <div class="menu-item"><span class="item-name">Tuna Pasta</span><span class="item-price">$8.00</span></div>
+        <ul class="menu-list"><li><div><strong>Caesar Salad</strong></div><span class="price">$6</span></li><li><div><strong>Chicken Caesar Salad</strong></div><span class="price">$9</span></li><li><div><strong>Feta Cheese</strong></div><span class="price">$8</span></li><li><div><strong>Halloumi</strong></div><span class="price">$8</span></li><li><div><strong>Tuna Pasta</strong></div><span class="price">$8</span></li></ul>
       </section>
-      <section class="menu-category" id="burgers">
+      <section class="menu-card" id="burgers">
         <h2>Burgers</h2><div class="rule"></div>
-        <div class="menu-item"><span><span class="item-name">Lebanese Burger</span><span class="item-description">Beef patty, coleslaw, fries and ketchup.</span></span><span class="item-price">$5.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Flavory Burger</span><span class="item-description">Beef patty, dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty.</span></span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span><span class="item-name">OHHH My Burger</span><span class="item-description">Double beef patty, dressing, lettuce, tomato, pickles, onion rings, BBQ, mozzarella patty and cheddar cheese.</span></span><span class="item-price">$8.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Chipotle Chicken Burger</span><span class="item-description">Deep-fried breaded chicken breast, chipotle dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty.</span></span><span class="item-price">$6.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Spicy Chicken Burger</span><span class="item-description">Deep-fried breaded chicken breast, spicy dressing, lettuce, tomato, pickles, cheddar cheese and jalapeños triangles.</span></span><span class="item-price">$6.00</span></div>
+        <ul class="menu-list">
+          <li><div><strong>Lebanese Burger</strong><span class="menu-subtext">Beef patty, coleslaw, fries and ketchup</span></div><span class="price">$5</span></li>
+          <li><div><strong>Flavory Burger</strong><span class="menu-subtext">Beef patty, dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty</span></div><span class="price">$6</span></li>
+          <li><div><strong>OHHH My Burger</strong><span class="menu-subtext">Double beef patty, dressing, lettuce, tomato, pickles, onion rings, BBQ, mozzarella patty and cheddar cheese</span></div><span class="price">$10</span></li>
+          <li><div><strong>Chipotle Chicken Burger</strong><span class="menu-subtext">Breaded chicken breast, chipotle dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty</span></div><span class="price">$7</span></li>
+          <li><div><strong>Spicy Chicken Burger</strong><span class="menu-subtext">Breaded chicken breast, spicy dressing, lettuce, tomato, pickles, cheddar cheese and jalapeños</span></div><span class="price">$7</span></li>
+        </ul>
       </section>
-      <section class="menu-category" id="pasta">
+      <section class="menu-card" id="pasta">
         <h2>Pasta</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Chicken Alfredo</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Alfredo Gratin</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Pesto</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Pesto Gratin</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Cajun</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Cajun Gratin</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Shrimp Rosé</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Shrimp Rosé Gratin</span><span class="item-price">$14.00</span></div>
-        <div class="menu-item"><span class="item-name">Veg Spinach &amp; Tomato</span><span class="item-price">$9.00</span></div>
+        <ul class="menu-list"><li><div><strong>Chicken Alfredo</strong></div><span class="price">$10</span></li><li><div><strong>Chicken Alfredo Gratin</strong></div><span class="price">$12</span></li><li><div><strong>Chicken Pesto</strong></div><span class="price">$10</span></li><li><div><strong>Chicken Pesto Gratin</strong></div><span class="price">$12</span></li><li><div><strong>Chicken Cajun</strong></div><span class="price">$10</span></li><li><div><strong>Chicken Cajun Gratin</strong></div><span class="price">$12</span></li><li><div><strong>Shrimp Rosé</strong></div><span class="price">$12</span></li><li><div><strong>Shrimp Rosé Gratin</strong></div><span class="price">$14</span></li><li><div><strong>Veg Spinach &amp; Tomato</strong></div><span class="price">$9</span></li></ul>
       </section>
-      <section class="menu-category" id="pizza">
-        <h2>Pizza</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Pepperoni</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Veg</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Margherita</span><span class="item-price">$8.00</span></div>
-        <div class="menu-item"><span class="item-name">Sojouk</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Shrimp</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Mexican Chicken</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Mexican Beef</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Tuna</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Tuna &amp; Shrimps</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Alfredo</span><span class="item-price">$12.00</span></div>
-        <p class="category-note">All pizzas are one size: 30 cm.</p>
+      <section class="menu-card" id="pizza">
+        <h2>Pizza</h2><div class="rule"></div><p class="menu-note">All pizzas are one size: 30 cm.</p>
+        <ul class="menu-list"><li><div><strong>Pepperoni</strong></div><span class="price">$10</span></li><li><div><strong>Veg</strong></div><span class="price">$10</span></li><li><div><strong>Margherita</strong></div><span class="price">$8</span></li><li><div><strong>Sojouk</strong></div><span class="price">$12</span></li><li><div><strong>Shrimp</strong></div><span class="price">$12</span></li><li><div><strong>Mexican Chicken</strong></div><span class="price">$12</span></li><li><div><strong>Mexican Beef</strong></div><span class="price">$12</span></li><li><div><strong>Tuna</strong></div><span class="price">$10</span></li><li><div><strong>Tuna &amp; Shrimps</strong></div><span class="price">$12</span></li><li><div><strong>Chicken Alfredo</strong></div><span class="price">$12</span></li></ul>
       </section>
-      <section class="menu-category" id="grilled">
-        <h2>Grilled</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Entrecote</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Entrecote with truffle gravy</span><span class="item-price">$14.00</span></div>
-        <div class="menu-item"><span class="item-name">Chicken Steak</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Spicy Cheesy Chicken Steak</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Shrimps<span class="item-description">12 pieces</span></span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Taouk<span class="item-description">3 skewers</span></span><span class="item-price">$11.00</span></div>
-        <p class="category-note">All grilled meals are served with fries and veggies.</p>
+      <section class="menu-card" id="grilled">
+        <h2>Grilled</h2><div class="rule"></div><p class="menu-note">Served with fries and veggies.</p>
+        <ul class="menu-list"><li><div><strong>Entrecote</strong></div><span class="price">$12</span></li><li><div><strong>Entrecote with truffle gravy</strong></div><span class="price">$14</span></li><li><div><strong>Chicken Steak</strong></div><span class="price">$10</span></li><li><div><strong>Spicy Cheesy Chicken Steak</strong></div><span class="price">$12</span></li><li><div><strong>Shrimps</strong><span class="menu-subtext">12 pieces</span></div><span class="price">$12</span></li><li><div><strong>Taouk</strong><span class="menu-subtext">3 skewers</span></div><span class="price">$11</span></li></ul>
       </section>
-      <section class="menu-category" id="fried">
-        <h2>Fried</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Escalope</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Cheese escalope</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Cordon Bleu</span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span class="item-name">Scallopini</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Spinach Stuffed Chicken &amp; pasta</span><span class="item-price">$11.00</span></div>
-        <div class="menu-item"><span class="item-name">Fish and Chips</span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span class="item-name">Shrimp and Chips</span><span class="item-price">$12.00</span></div>
-        <p class="category-note">Fried meals are served with their corresponding sauce and components.</p>
+      <section class="menu-card" id="fried">
+        <h2>Fried</h2><div class="rule"></div><p class="menu-note">Served with corresponding sauce and components.</p>
+        <ul class="menu-list"><li><div><strong>Escalope</strong></div><span class="price">$10</span></li><li><div><strong>Cheese escalope</strong></div><span class="price">$12</span></li><li><div><strong>Cordon Bleu</strong></div><span class="price">$12</span></li><li><div><strong>Scallopini</strong></div><span class="price">$10</span></li><li><div><strong>Spinach Stuffed Chicken &amp; Pasta</strong></div><span class="price">$11</span></li><li><div><strong>Fish and Chips</strong></div><span class="price">$10</span></li><li><div><strong>Shrimp and Chips</strong></div><span class="price">$12</span></li></ul>
       </section>
-      <section class="menu-category" id="healthy-meals">
+      <section class="menu-card" id="healthy-meals">
         <h2>Healthy Meals</h2><div class="rule"></div>
-        <div class="menu-item"><span><span class="item-name">Grilled Herb Chicken &amp; Rice</span><span class="item-description">597 kcal · Chicken breast 180g, white rice 150g, broccoli 80g, carrots 80g, olive oil 5g.</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Garlic Chicken &amp; Potatoes</span><span class="item-description">563 kcal · Chicken breast 180g, potatoes 220g, zucchini 100g, cherry tomatoes 80g, olive oil 5g.</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Lean Beef &amp; Rice</span><span class="item-description">560 kcal · Lean beef 170g, white rice 150g, broccoli 100g, carrots 80g, olive oil 5g.</span></span><span class="item-price">$11.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Garlic Beef &amp; Potatoes</span><span class="item-description">555 kcal · Lean beef 170g, potatoes 220g, cauliflower 100g, zucchini 100g, olive oil 5g.</span></span><span class="item-price">$11.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Lemon Garlic Shrimp &amp; Rice</span><span class="item-description">522 kcal · Shrimp 200g, white rice 150g, broccoli 100g, carrots 80g, olive oil 5g.</span></span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Cajun Shrimp &amp; Potatoes</span><span class="item-description">529 kcal · Shrimp 200g, potatoes 220g, zucchini 100g, cherry tomatoes 80g, olive oil 5g.</span></span><span class="item-price">$12.00</span></div>
-        <div class="menu-item"><span><span class="item-name">White Fish Fillet &amp; Rice</span><span class="item-description">530 kcal · White fish 220g, white rice 150g, cauliflower 100g, broccoli 100g, olive oil 8g.</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Grilled Salmon &amp; Potatoes</span><span class="item-description">575 kcal · Salmon 170g, potatoes 180g, broccoli 100g, cherry tomatoes 80g.</span></span><span class="item-price">$10.00</span></div>
+        <ul class="menu-list">
+          <li><div><strong>Grilled Herb Chicken &amp; Rice</strong><span class="menu-subtext">597 kcal · Chicken breast, white rice, broccoli, carrots and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Garlic Chicken &amp; Potatoes</strong><span class="menu-subtext">563 kcal · Chicken breast, potatoes, zucchini, cherry tomatoes and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Lean Beef &amp; Rice</strong><span class="menu-subtext">560 kcal · Lean beef, white rice, broccoli, carrots and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Garlic Beef &amp; Potatoes</strong><span class="menu-subtext">555 kcal · Lean beef, potatoes, cauliflower, zucchini and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Lemon Garlic Shrimp &amp; Rice</strong><span class="menu-subtext">522 kcal · Shrimp, white rice, broccoli, carrots and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Cajun Shrimp &amp; Potatoes</strong><span class="menu-subtext">529 kcal · Shrimp, potatoes, zucchini, cherry tomatoes and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>White Fish Fillet &amp; Rice</strong><span class="menu-subtext">530 kcal · White fish, white rice, cauliflower, broccoli and olive oil</span></div><span class="price">Ask us</span></li>
+          <li><div><strong>Grilled Salmon &amp; Potatoes</strong><span class="menu-subtext">575 kcal · Salmon, potatoes, broccoli and cherry tomatoes</span></div><span class="price">Ask us</span></li>
+        </ul>
       </section>
-      <section class="menu-category" id="healthy-burgers">
+      <section class="menu-card" id="healthy-burgers">
         <h2>Healthy Burgers</h2><div class="rule"></div>
-        <div class="menu-item"><span><span class="item-name">Lean Beef Cheeseburger</span><span class="item-description">560 kcal</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Grilled Chicken Burger</span><span class="item-description">495 kcal</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Turkey Avocado Burger</span><span class="item-description">590 kcal</span></span><span class="item-price">$10.00</span></div>
-        <div class="menu-item"><span><span class="item-name">Double Protein Burger Bowl</span><span class="item-description">470 kcal</span></span><span class="item-price">$12.00</span></div>
+        <ul class="menu-list"><li><div><strong>Lean Beef Cheeseburger</strong><span class="menu-subtext">560 kcal</span></div><span class="price">$10</span></li><li><div><strong>Grilled Chicken Burger</strong><span class="menu-subtext">495 kcal</span></div><span class="price">$10</span></li><li><div><strong>Turkey Avocado Burger</strong><span class="menu-subtext">590 kcal</span></div><span class="price">$10</span></li><li><div><strong>Double Protein Burger Bowl</strong><span class="menu-subtext">470 kcal</span></div><span class="price">$12</span></li></ul>
       </section>
-      <section class="menu-category" id="catering">
+      <section class="menu-card" id="catering">
         <h2>Catering</h2><div class="rule"></div>
-        <div class="menu-item"><span class="item-name">Lebanese Buffet</span><span class="item-price">From $12/person</span></div>
-        <div class="menu-item"><span class="item-name">Seafood Buffet</span><span class="item-price">From $15/person</span></div>
-        <div class="menu-item"><span class="item-name">European Style Buffet</span><span class="item-price">From $13/person</span></div>
-        <div class="menu-item"><span class="item-name">Finger Food Buffet</span><span class="item-price">From $10/person</span></div>
-        <div class="menu-item"><span class="item-name">Fast Food Buffet</span><span class="item-price">From $10/person</span></div>
-        <div class="menu-item"><span class="item-name">Sushi Buffet</span><span class="item-price">From $12/person</span></div>
-        <div class="menu-item"><span class="item-name">International Buffet</span><span class="item-price">From $15/person</span></div>
-        <div class="menu-item"><span class="item-name">Christmas Buffet</span><span class="item-price">From $14/person</span></div>
-        <div class="menu-item"><span class="item-name">New Year Buffet</span><span class="item-price">From $15/person</span></div>
-        <p class="category-note">Contact us for more details and custom catering options. <a href="https://wa.me/96181724372" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
+        <ul class="menu-list"><li><div><strong>Lebanese Buffet</strong></div><span class="price">From $12/person</span></li><li><div><strong>Seafood Buffet</strong></div><span class="price">From $15/person</span></li><li><div><strong>European Style Buffet</strong></div><span class="price">From $13/person</span></li><li><div><strong>Finger Food Buffet</strong></div><span class="price">From $10/person</span></li><li><div><strong>Fast Food Buffet</strong></div><span class="price">From $10/person</span></li><li><div><strong>Sushi Buffet</strong></div><span class="price">From $12/person</span></li><li><div><strong>International Buffet</strong></div><span class="price">From $15/person</span></li><li><div><strong>Christmas Buffet</strong></div><span class="price">From $14/person</span></li><li><div><strong>New Year Buffet</strong></div><span class="price">From $15/person</span></li></ul>
+        <p class="menu-footer-line">Contact us for more details and custom catering options. <a href="https://wa.me/96181724372" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
+      </section>
+      <section class="menu-card" id="sushi">
+        <h2>Sushi</h2><div class="rule"></div>
+        <ul class="menu-list"><li><div><strong>Crabby Set</strong><span class="menu-subtext">20 pieces mixed crab</span></div><span class="price">$13</span></li><li><div><strong>Mix Set</strong><span class="menu-subtext">20 pieces mixed crab, salmon, and shrimps</span></div><span class="price">$16</span></li><li><div><strong>Salmon and Shrimps Set</strong><span class="menu-subtext">20 pieces mixed salmon and shrimps</span></div><span class="price">$16</span></li></ul>
+        <p class="menu-footer-line">Sushi is available every Wednesday and Friday. Pre-order on WhatsApp: <a href="https://wa.me/96170305029" target="_blank" rel="noopener noreferrer">order now</a>.</p>
       </section>
     </div>
-    <p class="note">Menu prices are shown in USD. Please contact us about ingredients, availability, and catering details.</p>
+    <p class="note">Please contact us to confirm current availability, prices, ingredients, or catering details.</p>
   </main>
   <footer>© 2026 Flavory Kitchen &amp; Events — Prepared with care</footer>
 </body>
