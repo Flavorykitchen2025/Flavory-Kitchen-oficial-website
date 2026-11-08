@@ -30,16 +30,18 @@
     .category-nav { position:sticky; top:12px; z-index:5; display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin:28px 0 44px; padding:13px; border:1px solid #e8e1d5; border-radius:16px; background:rgba(255,255,255,.94); box-shadow:0 10px 30px rgba(37,30,18,.08); backdrop-filter:blur(10px); }
     .category-nav a { padding:9px 14px; border:1px solid transparent; border-radius:24px; color:#4b453a; text-decoration:none; font-size:.85rem; transition:.2s; }
     .category-nav a:hover,.category-nav a:focus-visible { color:#fff; background:#28231c; outline:none; }
-    .menu-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-    .menu-category { position:relative; min-height:148px; scroll-margin-top:125px; overflow:hidden; padding:27px 28px; border:1px solid #ebe5da; border-radius:15px; background:linear-gradient(135deg,#fff 0%,#fcfaf6 100%); box-shadow:0 9px 26px rgba(40,32,20,.045); transition:transform .25s,box-shadow .25s,border-color .25s; }
-    .menu-category:hover { transform:translateY(-3px); border-color:#d6c49c; box-shadow:0 15px 32px rgba(40,32,20,.09); }
-    .menu-category::after { position:absolute; top:22px; right:24px; color:#d5c49e; font-family:'Playfair Display',serif; font-size:2rem; content:'✦'; }
-    .menu-category h2 { margin:0 42px 12px 0; font-size:1.55rem; font-weight:600; }
-    .rule { width:42px; height:2px; margin-bottom:13px; background:var(--gold); }
-    .menu-category p { margin:0; color:var(--muted); font-size:.92rem; line-height:1.65; }
+    .menu-sections { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; align-items:start; }
+    .menu-category { scroll-margin-top:125px; padding:26px 28px 18px; border:1px solid #ebe5da; border-radius:15px; background:linear-gradient(135deg,#fff 0%,#fcfaf6 100%); box-shadow:0 9px 26px rgba(40,32,20,.05); }
+    .menu-category h2 { margin:0 0 5px; font-size:1.6rem; font-weight:600; }
+    .rule { width:42px; height:2px; margin:12px 0 15px; background:var(--gold); }
+    .menu-item { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px dotted #d8d0c3; }
+    .menu-item:last-child { border-bottom:0; }
+    .item-name { font-weight:600; }
+    .item-description { display:block; margin-top:4px; color:var(--muted); font-size:.86rem; line-height:1.5; }
+    .item-price { flex:0 0 auto; color:#8b6c35; font-weight:700; white-space:nowrap; }
     .note { margin:34px 0 0; padding:20px; border:1px solid #e5dbc7; border-radius:12px; color:#645c4e; text-align:center; line-height:1.7; background:#f1ece2; font-size:.9rem; }
     footer { padding:24px 16px; color:#ddd6c9; background:#171512; text-align:center; font-size:.86rem; }
-    @media(max-width:700px) { .hero { min-height:340px; padding-bottom:58px; } .topbar { margin-bottom:55px; } .menu-grid { grid-template-columns:1fr; } .category-nav { position:static; } main { padding-top:40px; } }
+    @media(max-width:700px) { .hero { min-height:340px; padding-bottom:58px; } .topbar { margin-bottom:55px; } .menu-sections { grid-template-columns:1fr; } .category-nav { position:static; } main { padding-top:40px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
   </style>
 </head>
@@ -51,7 +53,7 @@
     </div>
     <div class="eyebrow">FRESH INGREDIENTS · MADE WITH CARE</div>
     <h1>Our Menu</h1>
-    <p>A taste for every occasion. Explore our kitchen categories below; dish details and prices will be added as you share them.</p>
+    <p>A taste for every occasion. Explore our kitchen categories and discover what we’re preparing.</p>
   </header>
   <main>
     <div class="intro">
@@ -62,20 +64,49 @@
     <nav class="category-nav" aria-label="Menu categories">
       <a href="#breakfast">Breakfast</a><a href="#appetizers">Appetizers</a><a href="#salads">Salads</a><a href="#burgers">Burgers</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#grilled">Grilled</a><a href="#fried">Fried</a><a href="#healthy-meals">Healthy meals</a><a href="#healthy-burgers">Healthy Burgers</a><a href="#catering">Catering</a>
     </nav>
-    <div class="menu-grid">
-      <section class="menu-category" id="breakfast"><h2>Breakfast</h2><div class="rule"></div><p>Our breakfast selection will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="appetizers"><h2>Appetizers</h2><div class="rule"></div><p>Our appetizers will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="salads"><h2>Salads</h2><div class="rule"></div><p>Our salads will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="burgers"><h2>Burgers</h2><div class="rule"></div><p>Our burgers will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="pasta"><h2>Pasta</h2><div class="rule"></div><p>Our pasta dishes will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="pizza"><h2>Pizza</h2><div class="rule"></div><p>Our pizzas will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="grilled"><h2>Grilled</h2><div class="rule"></div><p>Our grilled dishes will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="fried"><h2>Fried</h2><div class="rule"></div><p>Our fried dishes will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="healthy-meals"><h2>Healthy meals</h2><div class="rule"></div><p>Our healthy meal options will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="healthy-burgers"><h2>Healthy Burgers</h2><div class="rule"></div><p>Our healthy burgers will be listed here, with descriptions and prices.</p></section>
-      <section class="menu-category" id="catering"><h2>Catering</h2><div class="rule"></div><p>Catering menus and packages will be listed here. Contact us for event inquiries.</p></section>
+    <div class="menu-sections">
+      <section class="menu-category" id="breakfast">
+        <h2>Breakfast</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Labneh</span><span class="item-price">$2.50</span></div>
+        <div class="menu-item"><span class="item-name">Feta cheese</span><span class="item-price">$3.50</span></div>
+        <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">$3.50</span></div>
+        <div class="menu-item"><span class="item-name">Turkey and cheese</span><span class="item-price">$4.00</span></div>
+        <div class="menu-item"><span class="item-name">Labneh w makdous</span><span class="item-price">$3.00</span></div>
+        <div class="menu-item"><span class="item-name">Double cream</span><span class="item-price">$3.50</span></div>
+        <div class="menu-item"><span class="item-name">Halloumi and Pesto</span><span class="item-price">$4.00</span></div>
+        <div class="menu-item"><span class="item-name">Kashkawan</span><span class="item-price">$3.50</span></div>
+        <div class="menu-item"><span class="item-name">Kashkawan and mortadella</span><span class="item-price">$4.00</span></div>
+        <div class="menu-item"><span class="item-name">Tuna Sandwich</span><span class="item-price">$4.00</span></div>
+      </section>
+      <section class="menu-category" id="appetizers">
+        <h2>Appetizers</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Fries</span><span class="item-price">$4.00</span></div>
+        <div class="menu-item"><span class="item-name">Wedges</span><span class="item-price">$4.00</span></div>
+        <div class="menu-item"><span class="item-name">Curly Fries</span><span class="item-price">$5.00</span></div>
+        <div class="menu-item"><span class="item-name">Mozzarella sticks<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span class="item-name">Jalapeños triangles<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span class="item-name">Cheese balls<span class="item-description">5 pieces</span></span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span class="item-name">Onion Rings</span><span class="item-price">$5.00</span></div>
+        <div class="menu-item"><span class="item-name">Snack combo<span class="item-description">2 mozzarella sticks, 2 cheese balls, 2 jalapeños triangles, 4 onion rings, fries and wedges.</span></span><span class="item-price">$12.00</span></div>
+      </section>
+      <section class="menu-category" id="salads">
+        <h2>Salads</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Caesar Salad</span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Caesar Salad</span><span class="item-price">$9.00</span></div>
+        <div class="menu-item"><span class="item-name">Feta Cheese</span><span class="item-price">$8.00</span></div>
+        <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">$8.00</span></div>
+        <div class="menu-item"><span class="item-name">Tuna Pasta</span><span class="item-price">$8.00</span></div>
+      </section>
+      <section class="menu-category" id="burgers"><h2>Burgers</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="pasta"><h2>Pasta</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="pizza"><h2>Pizza</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="grilled"><h2>Grilled</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="fried"><h2>Fried</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="healthy-meals"><h2>Healthy meals</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="healthy-burgers"><h2>Healthy Burgers</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="catering"><h2>Catering</h2><div class="rule"></div><p class="item-description">Catering options and packages coming soon. Contact us for event inquiries.</p></section>
     </div>
-    <p class="note">Menu items, descriptions, and prices are coming soon. Send your list whenever you’re ready, and we can place each item under the right category.</p>
+    <p class="note">Descriptions can be added as you send them. Menu prices are shown in USD.</p>
   </main>
   <footer>© 2026 Flavory Kitchen &amp; Events — Prepared with care</footer>
 </body>
