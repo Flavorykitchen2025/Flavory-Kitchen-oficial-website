@@ -11,3 +11,10 @@
     height: 5200px;
   }
 }
+
+/* Hide the Lebanese Mezze cards while their image sources are unavailable. */
+.services > .service-card:nth-of-type(5),
+.service-gallery-grid > .service-gallery-card:nth-of-type(5),
+.luxury-gallery-grid > .luxury-gallery-card:nth-of-type(5) {
+  display: none;
+}
