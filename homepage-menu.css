@@ -1,18 +1,9 @@
 .homepage-menu iframe {
-  display: block;
-  width: 100%;
-  height: 3000px;
-  border: 0;
-  background: #f7f4ee;
+  display: none !important;
 }
 
-@media (max-width: 700px) {
-  .homepage-menu iframe {
-    height: 5200px;
-  }
-}
-
-/* Remove every Lebanese Mezze card and its clickable label from the homepage design. */
+/* Keep the homepage focused on its main content; the full categorized menu
+   remains available on the dedicated menu.html page. */
 #services > .service-card:nth-child(5),
 .service-gallery-grid > .service-gallery-card:nth-child(5),
 .luxury-gallery-grid > .luxury-gallery-card:nth-child(5),
