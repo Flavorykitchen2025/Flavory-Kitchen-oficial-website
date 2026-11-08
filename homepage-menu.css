@@ -12,12 +12,13 @@
   }
 }
 
-/* Hide Lebanese Mezze cards while their image sources are unavailable. */
-.services > .service-card:nth-of-type(5),
-.service-gallery-grid > .service-gallery-card:nth-of-type(5),
-.luxury-gallery-grid > .luxury-gallery-card:nth-of-type(5),
+/* Remove every Lebanese Mezze card and its clickable label from the homepage design. */
+#services > .service-card:nth-child(5),
+.service-gallery-grid > .service-gallery-card:nth-child(5),
+.luxury-gallery-grid > .luxury-gallery-card:nth-child(5),
 .service-card:has([onclick*="mezze"]),
 .service-gallery-card:has([onclick*="mezze"]),
-.luxury-gallery-card:has([onclick*="mezze"]) {
+.luxury-gallery-card:has([onclick*="mezze"]),
+[onclick*="openGallery('mezze'"] {
   display: none !important;
 }
