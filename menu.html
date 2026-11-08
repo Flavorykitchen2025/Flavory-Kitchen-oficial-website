@@ -39,6 +39,7 @@
     .item-name { font-weight:600; }
     .item-description { display:block; margin-top:4px; color:var(--muted); font-size:.86rem; line-height:1.5; }
     .item-price { flex:0 0 auto; color:#8b6c35; font-weight:700; white-space:nowrap; }
+    .category-note { margin:14px 0 0; padding:12px 14px; border-radius:9px; color:#645c4e; background:#f1ece2; font-size:.86rem; line-height:1.6; }
     .note { margin:34px 0 0; padding:20px; border:1px solid #e5dbc7; border-radius:12px; color:#645c4e; text-align:center; line-height:1.7; background:#f1ece2; font-size:.9rem; }
     footer { padding:24px 16px; color:#ddd6c9; background:#171512; text-align:center; font-size:.86rem; }
     @media(max-width:700px) { .hero { min-height:340px; padding-bottom:58px; } .topbar { margin-bottom:55px; } .menu-sections { grid-template-columns:1fr; } .category-nav { position:static; } main { padding-top:40px; } }
@@ -97,11 +98,61 @@
         <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">$8.00</span></div>
         <div class="menu-item"><span class="item-name">Tuna Pasta</span><span class="item-price">$8.00</span></div>
       </section>
-      <section class="menu-category" id="burgers"><h2>Burgers</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
-      <section class="menu-category" id="pasta"><h2>Pasta</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
-      <section class="menu-category" id="pizza"><h2>Pizza</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
-      <section class="menu-category" id="grilled"><h2>Grilled</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
-      <section class="menu-category" id="fried"><h2>Fried</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
+      <section class="menu-category" id="burgers">
+        <h2>Burgers</h2><div class="rule"></div>
+        <div class="menu-item"><span><span class="item-name">Lebanese Burger</span><span class="item-description">Beef patty, coleslaw, fries and ketchup.</span></span><span class="item-price">$5.00</span></div>
+        <div class="menu-item"><span><span class="item-name">Flavory Burger</span><span class="item-description">Beef patty, dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty.</span></span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span><span class="item-name">OHHH My Burger</span><span class="item-description">Double beef patty, dressing, lettuce, tomato, pickles, onion rings, BBQ, mozzarella patty and cheddar cheese.</span></span><span class="item-price">$8.00</span></div>
+        <div class="menu-item"><span><span class="item-name">Chipotle Chicken Burger</span><span class="item-description">Deep-fried breaded chicken breast, chipotle dressing, lettuce, tomato, pickles, cheddar cheese and mozzarella patty.</span></span><span class="item-price">$6.00</span></div>
+        <div class="menu-item"><span><span class="item-name">Spicy Chicken Burger</span><span class="item-description">Deep-fried breaded chicken breast, spicy dressing, lettuce, tomato, pickles, cheddar cheese and jalapeños triangles.</span></span><span class="item-price">$6.00</span></div>
+      </section>
+      <section class="menu-category" id="pasta">
+        <h2>Pasta</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Chicken Alfredo</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Alfredo Gratin</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Pesto</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Pesto Gratin</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Cajun</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Cajun Gratin</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp Rosé</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp Rosé Gratin</span><span class="item-price">$14.00</span></div>
+        <div class="menu-item"><span class="item-name">Veg Spinach &amp; Tomato</span><span class="item-price">$9.00</span></div>
+      </section>
+      <section class="menu-category" id="pizza">
+        <h2>Pizza</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Pepperoni</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Veg</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Margherita</span><span class="item-price">$8.00</span></div>
+        <div class="menu-item"><span class="item-name">Sojouk</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Mexican Chicken</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Mexican Beef</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Tuna</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Tuna &amp; Shrimps</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Alfredo</span><span class="item-price">$12.00</span></div>
+        <p class="category-note">All pizzas are one size: 30 cm.</p>
+      </section>
+      <section class="menu-category" id="grilled">
+        <h2>Grilled</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Entrecote</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Entrecote with truffle gravy</span><span class="item-price">$14.00</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Steak</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Spicy Cheesy Chicken Steak</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Shrimps<span class="item-description">12 pieces</span></span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Taouk<span class="item-description">3 skewers</span></span><span class="item-price">$11.00</span></div>
+        <p class="category-note">All grilled meals are served with fries and veggies.</p>
+      </section>
+      <section class="menu-category" id="fried">
+        <h2>Fried</h2><div class="rule"></div>
+        <div class="menu-item"><span class="item-name">Escalope</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Cheese escalope</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Cordon Bleu</span><span class="item-price">$12.00</span></div>
+        <div class="menu-item"><span class="item-name">Scallopini</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Spinach Stuffed Chicken &amp; pasta</span><span class="item-price">$11.00</span></div>
+        <div class="menu-item"><span class="item-name">Fish and Chips</span><span class="item-price">$10.00</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp and Chips</span><span class="item-price">$12.00</span></div>
+        <p class="category-note">Fried meals are served with their corresponding sauce and components.</p>
+      </section>
       <section class="menu-category" id="healthy-meals"><h2>Healthy meals</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
       <section class="menu-category" id="healthy-burgers"><h2>Healthy Burgers</h2><div class="rule"></div><p class="item-description">Menu items coming soon.</p></section>
       <section class="menu-category" id="catering"><h2>Catering</h2><div class="rule"></div><p class="item-description">Catering options and packages coming soon. Contact us for event inquiries.</p></section>
