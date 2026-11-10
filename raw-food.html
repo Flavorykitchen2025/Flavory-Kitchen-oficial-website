@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore Flavory Kitchen's raw food menu.">
+  <meta name="description" content="Explore Flavory Kitchen's raw food menu, with marinated chicken and meat sold per kilogram.">
   <title>Raw Food | Flavory Kitchen &amp; Events</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
   <style>
     :root { --ink:#211d18; --gold:#c4a66a; --cream:#f7f4ee; --muted:#777168; }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; scroll-padding-top:24px; }
     body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; }
     .hero { min-height:340px; padding:24px 7% 66px; color:#fff; text-align:center; background:linear-gradient(180deg,rgba(13,12,10,.62),rgba(13,12,10,.82)),url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1800&auto=format&fit=crop') center/cover; }
     .topbar { width:min(1200px,100%); margin:0 auto 55px; display:flex; justify-content:space-between; align-items:center; }
@@ -27,13 +27,18 @@
     .intro .eyebrow { color:#9c7d43; }
     .intro h2 { margin:9px 0 10px; font-size:clamp(1.8rem,4vw,2.7rem); font-weight:500; }
     .intro p { color:var(--muted); line-height:1.7; }
-    .category { padding:30px; border:1px solid #ebe5da; border-radius:18px; background:linear-gradient(135deg,#fff,#fcfaf6); box-shadow:0 10px 30px rgba(40,32,20,.06); }
+    .category-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; align-items:start; }
+    .category { padding:26px 28px 20px; border:1px solid #ebe5da; border-radius:18px; background:linear-gradient(135deg,#fff,#fcfaf6); box-shadow:0 10px 30px rgba(40,32,20,.06); }
     .category h2 { margin:0 0 8px; font-size:1.65rem; }
-    .rule { width:42px; height:2px; margin:13px 0 18px; background:var(--gold); }
-    .placeholder { margin:0; color:var(--muted); line-height:1.8; }
-    .hint { margin-top:20px; padding:14px 16px; border-radius:10px; color:#645c4e; background:#f1ece2; font-size:.9rem; line-height:1.65; }
+    .rule { width:42px; height:2px; margin:13px 0 15px; background:var(--gold); }
+    .menu-list { list-style:none; margin:0; padding:0; }
+    .menu-list li { display:flex; justify-content:space-between; gap:14px; padding:11px 0; border-bottom:1px dotted #d8d0c3; }
+    .menu-list li:last-child { border-bottom:0; }
+    .item-name { font-weight:600; }
+    .item-price { flex:0 0 auto; color:#8b6c35; font-weight:700; white-space:nowrap; }
+    .unit-note { margin:24px 0 0; padding:14px 18px; border:1px solid #e5dbc7; border-radius:12px; color:#645c4e; text-align:center; background:#f1ece2; font-weight:700; }
     footer { padding:24px 16px; color:#ddd6c9; background:#171512; text-align:center; font-size:.86rem; }
-    @media(max-width:600px) { .hero { min-height:300px; padding-bottom:50px; } .topbar { margin-bottom:45px; } main { width:calc(100% - 30px); padding-top:40px; } .category { padding:23px 20px; } }
+    @media(max-width:700px) { .hero { min-height:300px; padding-bottom:50px; } .topbar { margin-bottom:45px; } main { width:calc(100% - 30px); padding-top:40px; } .category-grid { grid-template-columns:1fr; gap:16px; } .category { padding:23px 20px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 </head>
@@ -45,20 +50,63 @@
     </div>
     <div class="eyebrow">FRESH INGREDIENTS · MADE WITH CARE</div>
     <h1>Raw Food</h1>
-    <p>Explore our raw food selection, prepared with fresh ingredients.</p>
+    <p>Freshly marinated chicken and meat, ready for your table.</p>
   </header>
   <main>
     <div class="intro">
       <div class="eyebrow">RAW FOOD MENU</div>
-      <h2>Fresh &amp; Simple</h2>
-      <p>This page is ready for your raw food categories, items, descriptions, and prices.</p>
+      <h2>Chicken &amp; Meat</h2>
+      <p>Choose from our marinated, breaded, and seasoned selections.</p>
     </div>
-    <section class="category" aria-labelledby="raw-food-category">
-      <h2 id="raw-food-category">Raw Food</h2>
-      <div class="rule"></div>
-      <p class="placeholder">Menu items will be added here. Send the item names, descriptions, and prices when you’re ready, and they can be organized into this section.</p>
-      <p class="hint">Use the “Raw Food” button in the homepage navigation to visit this page.</p>
-    </section>
+    <div class="category-grid">
+      <section class="category" aria-labelledby="taouk-heading">
+        <h2 id="taouk-heading">Chicken · Taouk</h2><div class="rule"></div>
+        <ul class="menu-list">
+          <li><span class="item-name">Taouk Ahmar</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Taouk Abiad</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Taouk Curry</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Taouk Cajun</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Taouk Pesto</span><span class="item-price">$10</span></li>
+        </ul>
+      </section>
+      <section class="category" aria-labelledby="marinated-heading">
+        <h2 id="marinated-heading">Chicken · Marinated</h2><div class="rule"></div>
+        <ul class="menu-list">
+          <li><span class="item-name">Fahita</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Mexican</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Francisco</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Sesame Chicken</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Chicken Shawarma</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Herbs Marinated Chicken Steak</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Argentina Marinated Chicken Steak</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Lemon Marinated Chicken Steak</span><span class="item-price">$10</span></li>
+        </ul>
+      </section>
+      <section class="category" aria-labelledby="breaded-heading">
+        <h2 id="breaded-heading">Chicken · Breaded</h2><div class="rule"></div>
+        <ul class="menu-list">
+          <li><span class="item-name">Escalope</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Zinger</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Crispy Tender Strips</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Chicken Burger</span><span class="item-price">$10</span></li>
+          <li><span class="item-name">Parmesan Escalope</span><span class="item-price">$13</span></li>
+          <li><span class="item-name">Cordon Bleu</span><span class="item-price">$13</span></li>
+          <li><span class="item-name">Stuffed Chicken with Spinach and Cheese</span><span class="item-price">$13</span></li>
+        </ul>
+      </section>
+      <section class="category" aria-labelledby="meat-heading">
+        <h2 id="meat-heading">Meat</h2><div class="rule"></div>
+        <ul class="menu-list">
+          <li><span class="item-name">Beef Burger</span><span class="item-price">$18</span></li>
+          <li><span class="item-name">Beef Shawarma</span><span class="item-price">$18</span></li>
+          <li><span class="item-name">Philadelphia</span><span class="item-price">$18</span></li>
+          <li><span class="item-name">Beftek</span><span class="item-price">$18</span></li>
+          <li><span class="item-name">Marinated Beftek</span><span class="item-price">$19</span></li>
+          <li><span class="item-name">Marinated Steak</span><span class="item-price">$18</span></li>
+        </ul>
+      </section>
+    </div>
+    <p class="unit-note">All prices shown are per 1 kg.</p>
   </main>
   <footer>© 2026 Flavory Kitchen &amp; Events — Prepared with care</footer>
 </body>
