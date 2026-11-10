@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Flavory Kitchen's raw food menu.">
+  <title>Raw Food | Flavory Kitchen &amp; Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#211d18; --gold:#c4a66a; --cream:#f7f4ee; --muted:#777168; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; }
+    .hero { min-height:340px; padding:24px 7% 66px; color:#fff; text-align:center; background:linear-gradient(180deg,rgba(13,12,10,.62),rgba(13,12,10,.82)),url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1800&auto=format&fit=crop') center/cover; }
+    .topbar { width:min(1200px,100%); margin:0 auto 55px; display:flex; justify-content:space-between; align-items:center; }
+    .brand { color:#fff; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.1rem; }
+    .back { border:1px solid rgba(255,255,255,.55); border-radius:30px; padding:10px 17px; color:#fff; text-decoration:none; font-size:.9rem; }
+    .back:hover { border-color:var(--gold); color:var(--gold); }
+    .eyebrow { color:#dfc58e; letter-spacing:3px; font-size:.75rem; font-weight:700; }
+    h1,h2 { font-family:'Playfair Display',serif; }
+    h1 { margin:12px 0; font-size:clamp(3rem,8vw,5rem); font-weight:500; }
+    .hero p { max-width:620px; margin:0 auto; color:#eee9df; line-height:1.8; }
+    main { width:min(1000px,88%); margin:auto; padding:56px 0 90px; }
+    .intro { margin:0 auto 30px; text-align:center; }
+    .intro .eyebrow { color:#9c7d43; }
+    .intro h2 { margin:9px 0 10px; font-size:clamp(1.8rem,4vw,2.7rem); font-weight:500; }
+    .intro p { color:var(--muted); line-height:1.7; }
+    .category { padding:30px; border:1px solid #ebe5da; border-radius:18px; background:linear-gradient(135deg,#fff,#fcfaf6); box-shadow:0 10px 30px rgba(40,32,20,.06); }
+    .category h2 { margin:0 0 8px; font-size:1.65rem; }
+    .rule { width:42px; height:2px; margin:13px 0 18px; background:var(--gold); }
+    .placeholder { margin:0; color:var(--muted); line-height:1.8; }
+    .hint { margin-top:20px; padding:14px 16px; border-radius:10px; color:#645c4e; background:#f1ece2; font-size:.9rem; line-height:1.65; }
+    footer { padding:24px 16px; color:#ddd6c9; background:#171512; text-align:center; font-size:.86rem; }
+    @media(max-width:600px) { .hero { min-height:300px; padding-bottom:50px; } .topbar { margin-bottom:45px; } main { width:calc(100% - 30px); padding-top:40px; } .category { padding:23px 20px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="topbar">
+      <a class="brand" href="index.html">Flavory Kitchen &amp; Events</a>
+      <a class="back" href="index.html">← Back to homepage</a>
+    </div>
+    <div class="eyebrow">FRESH INGREDIENTS · MADE WITH CARE</div>
+    <h1>Raw Food</h1>
+    <p>Explore our raw food selection, prepared with fresh ingredients.</p>
+  </header>
+  <main>
+    <div class="intro">
+      <div class="eyebrow">RAW FOOD MENU</div>
+      <h2>Fresh &amp; Simple</h2>
+      <p>This page is ready for your raw food categories, items, descriptions, and prices.</p>
+    </div>
+    <section class="category" aria-labelledby="raw-food-category">
+      <h2 id="raw-food-category">Raw Food</h2>
+      <div class="rule"></div>
+      <p class="placeholder">Menu items will be added here. Send the item names, descriptions, and prices when you’re ready, and they can be organized into this section.</p>
+      <p class="hint">Use the “Raw Food” button in the homepage navigation to visit this page.</p>
+    </section>
+  </main>
+  <footer>© 2026 Flavory Kitchen &amp; Events — Prepared with care</footer>
+</body>
+</html>
