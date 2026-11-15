@@ -858,6 +858,14 @@ function updateClock() {
             year: 'numeric'
         }).format(now);
 }
+    document.getElementById('liveDate').textContent =
+        new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Beirut',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        }).format(now);
+}
 }
 
 async function loadVisitorCount() {
