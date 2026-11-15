@@ -67,6 +67,45 @@
 <a href="#contact">Contact</a>
 </div>
 </nav>
+
+<div class="homepage-widget">
+    <div class="widget-card location-widget">
+        <div class="widget-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="widget-body">
+            <span class="widget-label">Location</span>
+            <strong><a href="https://maps.google.com/?q=Flavory+Kitchen+and+events" target="_blank" rel="noopener" style="color:#fff; text-decoration:none;">Beirut, Lebanon</a></strong>
+            <small>Live</small>
+        </div>
+    </div>
+
+    <div class="widget-card weather-widget">
+        <div class="widget-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+        <div class="widget-body">
+            <span class="widget-label">Weather</span>
+            <strong id="weatherTemp">Loading...</strong>
+            <small id="weatherMeta">Daily forecast</small>
+        </div>
+    </div>
+
+    <div class="widget-card clock-widget">
+        <div class="widget-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="widget-body">
+            <span class="widget-label">Date &amp; Time</span>
+            <strong id="liveClock">--:--:--</strong>
+            <small id="liveDate">Loading...</small>
+        </div>
+    </div>
+
+    <div class="widget-card visitor-widget">
+        <div class="widget-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="widget-body">
+            <span class="widget-label">Visitors</span>
+            <strong id="visitorCount">Loading...</strong>
+            <small>Website visits</small>
+        </div>
+    </div>
+</div>
+
 <div class="hero-content">
 <span class="premium-tag">5 STAR PREMIUM CATERING EXPERIENCE</span>
 <h1>Luxury Catering &amp; Events Crafted To Impress</h1>
@@ -734,6 +773,107 @@ function openGallery(type, title){
 function closeGallery(){
     document.getElementById('galleryModal').classList.remove('active');
 }
+
+const weatherLocation = {
+    latitude: 33.8334571,
+    longitude: 35.5113916
+};
+
+function weatherCodeToLabel(code) {
+    const map = {
+        0: 'Clear sky',
+        1: 'Mostly clear',
+        2: 'Partly cloudy',
+        3: 'Cloudy',
+        45: 'Foggy',
+        48: 'Foggy',
+        51: 'Light drizzle',
+        53: 'Drizzle',
+        55: 'Heavy drizzle',
+        56: 'Freezing drizzle',
+        57: 'Freezing drizzle',
+        61: 'Light rain',
+        63: 'Rain',
+        65: 'Heavy rain',
+        66: 'Freezing rain',
+        67: 'Freezing rain',
+        71: 'Light snow',
+        73: 'Snow',
+        75: 'Heavy snow',
+        77: 'Snow grains',
+        80: 'Rain showers',
+        81: 'Heavy showers',
+        82: 'Violent showers',
+        85: 'Snow showers',
+        86: 'Heavy snow showers',
+        95: 'Thunderstorm',
+        96: 'Thunderstorm',
+        99: 'Thunderstorm'
+    };
+    return map[code] || 'Weather';
+}
+
+async function loadWeather() {
+    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${weatherLocation.latitude}&longitude=${weatherLocation.longitude}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto&forecast_days=1`;
+
+    try {
+        const response = await fetch(weatherUrl);
+        if (!response.ok) throw new Error('Weather request failed');
+        const data = await response.json();
+        const current = data.current ?? {};
+        const daily = data.daily ?? {};
+        const temp = current.temperature_2m ?? daily.temperature_2m_max?.[0] ?? '--';
+        const code = current.weather_code ?? daily.weather_code?.[0] ?? 0;
+        const label = weatherCodeToLabel(code);
+        const maxTemp = Array.isArray(daily.temperature_2m_max) ? daily.temperature_2m_max[0] : null;
+        const minTemp = Array.isArray(daily.temperature_2m_min) ? daily.temperature_2m_min[0] : null;
+
+        const tempText = typeof temp === 'number' ? `${Math.round(temp)}°C` : 'N/A';
+        const metaText = maxTemp !== null && minTemp !== null ? `${label} • ${Math.round(maxTemp)}° / ${Math.round(minTemp)}°` : label;
+        document.getElementById('weatherTemp').textContent = tempText;
+        document.getElementById('weatherMeta').textContent = metaText;
+    } catch (error) {
+        document.getElementById('weatherTemp').textContent = 'N/A';
+        document.getElementById('weatherMeta').textContent = 'Unavailable';
+    }
+}
+
+function updateClock() {
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Beirut',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    });
+
+    const beirutNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Beirut' }));
+    const parts = formatter.formatToParts(beirutNow);
+    const time = `${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`;
+    const date = `${parts.find(p => p.type === 'day').value} ${parts.find(p => p.type === 'month').value} ${parts.find(p => p.type === 'year').value}`;
+
+    document.getElementById('liveClock').textContent = time;
+    document.getElementById('liveDate').textContent = date;
+}
+
+async function loadVisitorCount() {
+    try {
+        const response = await fetch('https://api.countapi.xyz/hit/flavory-kitchen-official-website/visits');
+        if (!response.ok) throw new Error('Counter request failed');
+        const data = await response.json();
+        const count = Number(data.value || 0);
+        document.getElementById('visitorCount').textContent = count.toLocaleString();
+    } catch (error) {
+        document.getElementById('visitorCount').textContent = '1';
+    }
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+loadWeather();
+loadVisitorCount();
 </script>
 </body>
 </html>
