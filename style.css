@@ -78,12 +78,13 @@ section.menu-section#menu {
   font-size: 1.1rem;
 }
 
-.visitor-widget .widget-body strong {
-  .visitor-widget #visitorCount {
+.visitor-widget .widget-body strong,
+.visitor-widget #visitorCount {
     color: #ffffff;
     font-size: 1.15rem;
     font-weight: 600;
     line-height: 1.3;
+}
 }
 }
 
