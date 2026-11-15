@@ -839,23 +839,25 @@ async function loadWeather() {
 }
 
 function updateClock() {
-    const formatter = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Europe/Beirut',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-    });
+    const now = new Date();
 
-    const beirutNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Beirut' }));
-    const parts = formatter.formatToParts(beirutNow);
-    const time = `${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`;
-    const date = `${parts.find(p => p.type === 'day').value} ${parts.find(p => p.type === 'month').value} ${parts.find(p => p.type === 'year').value}`;
+    document.getElementById('liveClock').textContent =
+        new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Beirut',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).format(now);
 
-    document.getElementById('liveClock').textContent = time;
-    document.getElementById('liveDate').textContent = date;
+    document.getElementById('liveDate').textContent =
+        new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Beirut',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        }).format(now);
+}
 }
 
 async function loadVisitorCount() {
