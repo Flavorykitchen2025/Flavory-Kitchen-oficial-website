@@ -814,27 +814,44 @@ function weatherCodeToLabel(code) {
 }
 
 async function loadWeather() {
-    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${weatherLocation.latitude}&longitude=${weatherLocation.longitude}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto&forecast_days=1`;
+    const url =
+        `https://api.open-meteo.com/v1/forecast?latitude=33.8334571&longitude=35.5113916&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FBeirut`;
+
+    const tempElement = document.getElementById('weatherTemp');
+    const metaElement = document.getElementById('weatherMeta');
 
     try {
-        const response = await fetch(weatherUrl);
-        if (!response.ok) throw new Error('Weather request failed');
-        const data = await response.json();
-        const current = data.current ?? {};
-        const daily = data.daily ?? {};
-        const temp = current.temperature_2m ?? daily.temperature_2m_max?.[0] ?? '--';
-        const code = current.weather_code ?? daily.weather_code?.[0] ?? 0;
-        const label = weatherCodeToLabel(code);
-        const maxTemp = Array.isArray(daily.temperature_2m_max) ? daily.temperature_2m_max[0] : null;
-        const minTemp = Array.isArray(daily.temperature_2m_min) ? daily.temperature_2m_min[0] : null;
+        const response = await fetch(url);
 
-        const tempText = typeof temp === 'number' ? `${Math.round(temp)}°C` : 'N/A';
-        const metaText = maxTemp !== null && minTemp !== null ? `${label} • ${Math.round(maxTemp)}° / ${Math.round(minTemp)}°` : label;
-        document.getElementById('weatherTemp').textContent = tempText;
-        document.getElementById('weatherMeta').textContent = metaText;
+        if (!response.ok) {
+            throw new Error(`Weather API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!data.current) {
+            throw new Error('Weather data is missing');
+        }
+
+        const temperature = Math.round(data.current.temperature_2m);
+        const code = data.current.weather_code;
+
+        tempElement.textContent = `${temperature}°C`;
+
+        const label = weatherCodeToLabel(code);
+
+        const max = Math.round(data.daily.temperature_2m_max[0]);
+        const min = Math.round(data.daily.temperature_2m_min[0]);
+
+        metaElement.textContent = `${label} • ${max}° / ${min}°`;
+
     } catch (error) {
-        document.getElementById('weatherTemp').textContent = 'N/A';
-        document.getElementById('weatherMeta').textContent = 'Unavailable';
+        console.error('Flavory weather widget:', error);
+
+        tempElement.textContent = 'Unavailable';
+        metaElement.textContent = 'Weather service error';
+    }
+}
     }
 }
 
