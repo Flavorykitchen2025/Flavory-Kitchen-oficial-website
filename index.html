@@ -903,49 +903,31 @@ function updateClock() {
 
 async function renderVisitorCount() {
     const target = document.getElementById('visitorCount');
-
     if (!target) return;
 
-    let attempts = 0;
+    target.textContent = 'Loading...';
 
-    const timer = setInterval(() => {
-        if (
-            window.goatcounter &&
-            typeof window.goatcounter.visit_count === 'function'
-        ) {
-            clearInterval(timer);
+    try {
+        const response = await fetch(
+            'https://flavory-kitchen.goatcounter.com/counter/TOTAL.json',
+            { cache: 'no-store' }
+        );
 
-            target.textContent = '';
-
-            window.goatcounter.visit_count({
-                append: '#visitorCount',
-                path: 'TOTAL',
-                no_branding: true,
-                style: `
-                    div {
-                        background: transparent;
-                        border: 0;
-                        padding: 0;
-                        margin: 0;
-                    }
-
-                    #gcvc-for {
-                        display: none;
-                    }
-
-                    #gcvc-views {
-                        color: #ffffff;
-                        font-size: 1.15rem;
-                        font-weight: 600;
-                    }
-                `
-            });
-
-        } else if (++attempts >= 50) {
-            clearInterval(timer);
-            target.textContent = 'Unavailable';
+        if (!response.ok) {
+            throw new Error('GoatCounter returned HTTP ' + response.status);
         }
-    }, 100);
+
+        const data = await response.json();
+
+        if (data.count === undefined || data.count === null || data.count === '') {
+            throw new Error('GoatCounter returned no count');
+        }
+
+        target.textContent = data.count;
+    } catch (error) {
+        console.error('Flavory visitor counter error:', error);
+        target.textContent = 'Unavailable';
+    }
 }
 
 updateClock();
